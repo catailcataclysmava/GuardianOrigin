@@ -114,7 +114,7 @@ public class ModEvents {
         }
     }
     @SubscribeEvent
-    public static void on_item_pickup (EntityItemPickupEvent event){
+    public static void onItemPickup (EntityItemPickupEvent event){
         if ( event.getItem().getItem().getTag() != null &&  event.getItem().getItem().getTag().getBoolean("Bound Weapon") ) {
 
             event.getItem().setItem(ItemStack.EMPTY);
@@ -125,7 +125,7 @@ public class ModEvents {
     }
 
      @SubscribeEvent
-     public static void projectileimpact (ProjectileImpactEvent event){
+     public static void projectileImpact (ProjectileImpactEvent event){
 
        if ( event.getProjectile() instanceof ThrownTrident &&
                event.getProjectile().serializeNBT().getCompound("Trident").getCompound("tag").getBoolean("Bound Weapon")){
@@ -134,14 +134,14 @@ public class ModEvents {
      }
 
     @SubscribeEvent
-    public static void on_set_enchant_level(EnchantmentLevelSetEvent event ){
+    public static void onSetEnchantLevel(EnchantmentLevelSetEvent event ){
         if (event.getItem().getTag() != null && event.getItem().getTag().getBoolean("Bound Weapon")) {
             event.setEnchantLevel(0);
         }
 
     }
     @SubscribeEvent
-    public static void grindestoneevent (GrindstoneEvent.OnplaceItem event){
+    public static void grindStoneEvent (GrindstoneEvent.OnplaceItem event){
         if (event.getBottomItem().getTag() != null && event.getBottomItem().getTag().getBoolean("Bound Weapon")){
             event.setCanceled(true);
         }
@@ -151,7 +151,7 @@ public class ModEvents {
 
     }
     @SubscribeEvent
-    public static void playerdeath (LivingDeathEvent event){
+    public static void playerDeath (LivingDeathEvent event){
         if (event.getEntity() instanceof Player){
             for (int i=0;i<((Player) event.getEntity()).getInventory().getContainerSize();i++){
 
