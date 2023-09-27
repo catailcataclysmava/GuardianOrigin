@@ -1,0 +1,13 @@
+{
+    "name": "Bind Weapon",
+    "description": "Using your secondary key you may Bind a sword to yourself, or if you are holding your bound sword unbind it. \nThe bound sword may not be removed from your inventory except by unsummoning and cannot be enchanted unless unbound first.",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "guardianorigin:bind_sword",
+        "command": "tellraw @a {\"text\": \"Hallo world!\", \"color\": \"green\"}"
+    },
+    "cooldown": 1,
+    "key": {
+        "key": "key.origins.secondary_active"
+    }
+}

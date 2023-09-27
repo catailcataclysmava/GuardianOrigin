@@ -1,0 +1,14 @@
+{
+  "summoned_bound_weapon": {
+    "subtitle": "",
+    "sounds": [
+      "guardianorigin:summoned_bound_weapon"
+    ]
+  },
+  "unsummoned_bound_weapon": {
+    "subtitle": "",
+    "sounds": [
+      "guardianorigin:unsummoned_bound_weapon"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+    "name": "BoostGauge",
+    "description": "gradually speeds you forward",
+    "hidden": true,
+    "type": "origins:multiple",
+    "gauge": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 2
+        }
+    },
+    "recharge": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "guardianorigin:boostgauge_gauge",
+            "modifier": {
+                "operation": "addition",
+                "value": 1
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Fly",
+    "description": "You always have en elytra, by holding jump when gliding you can spend your energy meter to increase speed.\nenergy recharges over time.",
+    "type": "origins:elytra_flight",
+    "render_elytra": true,
+    "texture_location": "guardianorigin:textures/entity/elytra.png"
+}

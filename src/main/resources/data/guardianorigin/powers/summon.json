@@ -1,0 +1,13 @@
+{
+    "name": "Summon",
+    "description": "Using your primary key summon or unsummon your bound weapon to and from your hand. Any items in your hand will be placed somewhere else, but if your inventory is entirely full the summoning will fail. ",
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "guardianorigin:summon_sword",
+        "command": "tellraw @a {\"text\": \"Hallo world!\", \"color\": \"green\"}"
+    },
+    "cooldown": 1,
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+}

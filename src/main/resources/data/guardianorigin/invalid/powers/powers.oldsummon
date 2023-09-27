@@ -1,0 +1,77 @@
+//{
+//  "name": "summonweapon",
+//  "description": "summon your weapon!",
+//  "type": "origins:multiple",
+//  "unsummon": {
+//    "condition": {
+//      "type": "origins:equipped_item",
+//      "equipment_slot": "mainhand",
+//      "item_condition": {
+//        "type": "origins:ingredient",
+//        "ingredient": {
+//          "item": "minecraft:diamond_sword"
+//        }
+//      }
+//    },
+//    "type": "origins:active_self",
+//    "entity_action": {
+//      "type": "origins:modify_inventory",
+//      "inventory_type": "inventory",
+//      "item_action": {
+//        "type": "origins:consume",
+//        "amount": 1
+//      },
+//      "slots": [],
+//      "slot": "weapon.mainhand"
+//    },
+//    "cooldown": 20,
+//    "key": {
+//      "key": "key.origins.primary_active"
+//    }
+//  },
+//  "summon": {
+//    "condition": {
+//      "type": "origins:and",
+//      "conditions": [
+//        {
+//          "inverted": true,
+//          "type": "origins:equipped_item",
+//          "equipment_slot": "mainhand",
+//          "item_condition": {
+//            "type": "origins:ingredient",
+//            "ingredient": {
+//              "item": "minecraft:diamond_sword"
+//            }
+//          }
+//        }
+//      ]
+//    },
+//    "type": "origins:active_self",
+//    "entity_action": {
+//      "type": "origins:if_else",
+//      "condition": {
+//        "type": "origins:equipped_item",
+//        "equipment_slot": "mainhand",
+//        "item_condition": {
+//          "type": "origins:empty"
+//        }
+//      },
+//      "if_action": {
+//        "type": "origins:give",
+//        "stack": {
+//          "item": "minecraft:diamond_sword",
+//          "amount": 1
+//        },
+//        "preferred_slot": "mainhand"
+//      },
+//      "else_action": {
+//        "type": "origins:execute_command",
+//        "command": "tellraw @a {\"text\": \"Hallo world!\", \"color\": \"green\"}"
+//      }
+//    },
+//    "cooldown": 20,
+//    "key": {
+//      "key": "key.origins.primary_active"
+//    }
+//  }
+//}

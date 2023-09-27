@@ -1,0 +1,13 @@
+{
+    "name": "ShieldEffect",
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "guardianorigin:shield_shieldtimer",
+        "comparison": ">",
+        "compare_to": 0
+    },
+    "type": "apugli:energy_swirl",
+    "texture_location": "minecraft:textures/entity/creeper/creeper_armor.png",
+    "speed": 0.01
+}

@@ -1,0 +1,69 @@
+{
+    "name": "Shield",
+    "description": "as long as your energy meter is above 25% you take 1 less hearts in damage from all sources, this depletes 10% of your energy per activation.\nenergy recharges over time.",
+    "type": "origins:multiple",
+    "shieldtimer": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 0
+    },
+    "shieldtimerdropper": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "guardianorigin:shield_shieldtimer",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:modify_resource",
+            "resource": "guardianorigin:shield_shieldtimer",
+            "modifier": {
+                "operation": "addition",
+                "value": -1
+            }
+        }
+    },
+    "shielddamagereduct": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "guardianorigin:boostgauge_gauge",
+            "comparison": ">=",
+            "compare_to": 50
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "addition",
+            "value": -2
+        },
+        "self_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "guardianorigin:boostgauge_gauge",
+                    "modifier": {
+                        "operation": "addition",
+                        "value": -20
+                    }
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "guardianorigin:shield_shieldtimer",
+                    "modifier": {
+                        "operation": "set_total",
+                        "value": 3
+                    }
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.vex.hurt",
+                    "volume": 1,
+                    "pitch": 1
+                }
+            ]
+        }
+    }
+}

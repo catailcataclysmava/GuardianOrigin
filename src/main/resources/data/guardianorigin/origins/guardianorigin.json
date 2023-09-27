@@ -1,0 +1,17 @@
+{
+    "name": "Guardian",
+    "powers": [
+        "guardianorigin:fly",
+        "guardianorigin:boostgauge",
+        "guardianorigin:boost",
+        "guardianorigin:summon",
+        "guardianorigin:bind",
+        "guardianorigin:shieldeffect",
+        "guardianorigin:shield"
+    ],
+    "icon": {
+        "item": "minecraft:diamond_sword"
+    },
+    "order": 4,
+    "impact": 1
+}
