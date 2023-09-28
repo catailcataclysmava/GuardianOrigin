@@ -20,6 +20,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TridentItem;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
+import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.GrindstoneEvent;
 import net.minecraftforge.event.TickEvent;
@@ -160,6 +161,15 @@ public class ModEvents {
                     ((Player) event.getEntity()).getInventory().setItem(i, ItemStack.EMPTY);
                 }
             }
+        }
+    }
+    @SubscribeEvent
+    public static void anvilUpdate (AnvilUpdateEvent event){
+        if (event.getLeft().getTag() != null && event.getLeft().getTag().getBoolean("Bound Weapon")){
+            event.setCanceled(true);
+        }
+        if (event.getRight().getTag() != null && event.getRight().getTag().getBoolean("Bound Weapon")){
+            event.setCanceled(true);
         }
     }
 

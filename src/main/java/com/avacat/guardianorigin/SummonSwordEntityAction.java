@@ -16,6 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import org.apache.logging.log4j.core.jmx.Server;
 
 public class SummonSwordEntityAction extends EntityAction<BindSwordConfig> {
     public SummonSwordEntityAction() {
@@ -45,6 +46,7 @@ public class SummonSwordEntityAction extends EntityAction<BindSwordConfig> {
                         }
                         else{
                             player.sendSystemMessage(Component.literal("No place to move held item(s)"));
+
                         }
                     }
                 }

@@ -36,7 +36,7 @@ public class BindSwordEntityAction extends EntityAction<BindSwordConfig> {
                         weapon.bindWeapon(selected);
 
                     }
-                    else  player.sendSystemMessage(Component.literal("Bound item must be a sword, trident, or bow"));
+                    else  player.sendSystemMessage(Component.literal("Bound item must be a sword, trident,bow, or crossbow"));
                 }
                 else{
                     if (selected.sameItem(currentWeapon) && selected.getTag().getUUID("Owner").equals(player.getUUID())){
